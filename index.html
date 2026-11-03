@@ -1,0 +1,434 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Для тебя, Любимая ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #fff4f6;
+    color: #754b59;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100vh;
+    padding: 70px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: clamp(35px, 7vw, 60px);
+    color: #c66b88;
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-size: clamp(27px, 5vw, 38px);
+    color: #c66b88;
+    margin-bottom: 25px;
+}
+
+p {
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+.hero {
+    background:
+        radial-gradient(circle at 20% 20%, #ffe0e9, transparent 35%),
+        radial-gradient(circle at 80% 80%, #ffdce8, transparent 35%),
+        #fff4f6;
+}
+
+.subtitle {
+    font-size: 21px;
+    margin-bottom: 35px;
+}
+
+.heart {
+    font-size: 75px;
+    margin-bottom: 25px;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+button {
+    border: none;
+    background: #d9829d;
+    color: white;
+    padding: 16px 30px;
+    border-radius: 35px;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: inherit;
+    box-shadow: 0 5px 20px #e9b1c1;
+}
+
+button:hover {
+    background: #c66b88;
+    transform: translateY(-3px);
+}
+
+.letter-section {
+    background: #ffeaf0;
+}
+
+.letter {
+    max-width: 650px;
+    padding: 40px;
+    background: #fffafb;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px #eac3ce;
+    text-align: left;
+}
+
+.letter p {
+    margin-bottom: 18px;
+}
+
+.signature {
+    text-align: right;
+    color: #c66b88;
+    font-style: italic;
+}
+
+.hearts-section {
+    background: #fff4f6;
+}
+
+.heart-button {
+    font-size: 65px;
+    background: transparent;
+    box-shadow: none;
+    padding: 15px;
+}
+
+.heart-button:hover {
+    background: transparent;
+    transform: scale(1.2);
+}
+
+.hint {
+    font-size: 15px;
+    color: #ae7d8d;
+    margin-top: 15px;
+}
+
+.secret-section {
+    background:
+        radial-gradient(circle at 50% 50%, #ffe0e9, transparent 70%),
+        #fff0f4;
+}
+
+.secret-message {
+    display: none;
+    max-width: 600px;
+    margin-top: 35px;
+    padding: 35px;
+    background: #fffafb;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px #eac3ce;
+    animation: appear 1s ease;
+}
+
+.secret-message p {
+    font-size: 21px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating-heart {
+    position: fixed;
+    pointer-events: none;
+    z-index: 1000;
+    animation: fly 2s ease-out forwards;
+}
+
+@keyframes fly {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-180px) scale(1.8) rotate(25deg);
+    }
+}
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #ffeaf0;
+    color: #bd8194;
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+    .letter {
+        padding: 25px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 50px 18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- ГЛАВНАЯ СТРАНИЦА -->
+<section class="hero">
+
+    <div class="heart">❤️</div>
+
+    <h1>Для тебя, Любимая</h1>
+
+    <p class="subtitle">
+        Я приготовил кое-что особенное...
+    </p>
+
+    <button onclick="scrollToLetter()">
+        Открыть моё письмо 💌
+    </button>
+
+</section>
+
+
+<!-- ЛЮБОВНОЕ ПИСЬМО -->
+<section class="letter-section" id="letter">
+
+    <h2>Несколько слов для тебя 💗</h2>
+
+    <div class="letter">
+
+        <p>Моя любимая,</p>
+
+        <p>
+            Я долго думал, как выразить всё то,
+            что чувствую к тебе. И понял, что
+            иногда даже самые красивые слова
+            не могут передать того, насколько
+            дорог мне человек.
+        </p>
+
+        <p>
+            Я хочу, чтобы ты всегда помнила,
+            что ты очень важна для меня.
+            Твоя улыбка, твой голос, твой смех
+            и даже самые обычные моменты,
+            проведённые вместе, делают мои дни
+            намного лучше.
+        </p>
+
+        <p>
+            Спасибо тебе за то, что ты есть.
+            За каждую минуту, за каждое
+            воспоминание и за возможность
+            быть рядом с тобой.
+        </p>
+
+        <p>
+            Я не обещаю, что каждый день
+            будет идеальным, но обещаю,
+            что буду стараться делать тебя
+            счастливой и напоминать о том,
+            как сильно ты мне дорога.
+        </p>
+
+        <p>
+            Я очень сильно тебя люблю.
+            И надеюсь, что этот маленький
+            сайт будет иногда напоминать
+            тебе об этом. ❤️
+        </p>
+
+        <p class="signature">
+            С любовью, твой человек ❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- ИНТЕРАКТИВНЫЕ СЕРДЕЧКИ -->
+<section class="hearts-section">
+
+    <h2>Немного любви для тебя</h2>
+
+    <p>
+        Нажимай на сердечко и получай
+        немного моей любви ❤️
+    </p>
+
+    <button class="heart-button" onclick="makeHearts(event)">
+        💗
+    </button>
+
+    <p class="hint">
+        Каждое сердечко — ещё одно напоминание,
+        что я тебя люблю.
+    </p>
+
+</section>
+
+
+<!-- СЕКРЕТНЫЙ СЮРПРИЗ -->
+<section class="secret-section">
+
+    <div class="heart">💝</div>
+
+    <h2>А теперь кое-что особенное...</h2>
+
+    <p style="margin-bottom: 30px;">
+        Я оставил для тебя ещё одно послание.
+    </p>
+
+    <button onclick="showSecret()">
+        Открыть секрет 💌
+    </button>
+
+    <div class="secret-message" id="secret">
+
+        <h2>Ты — моё счастье ❤️</h2>
+
+        <p>
+            Среди миллионов людей
+            я рад, что встретил именно тебя.
+        </p>
+
+        <p style="margin-top: 20px;">
+            И если бы мне снова пришлось
+            выбирать, я бы снова выбрал тебя.
+        </p>
+
+        <p style="margin-top: 25px; color: #c66b88;">
+            Я люблю тебя, Любимая.
+            Сегодня, завтра и каждый день. ❤️
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+    Сделано с любовью специально для тебя ❤️
+</footer>
+
+
+<script>
+
+function scrollToLetter() {
+    document.getElementById("letter").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+
+// Создание летающих сердечек
+function makeHearts(event) {
+
+    const emojis = ["❤️", "💗", "💕", "💖", "💘", "💝"];
+
+    for (let i = 0; i < 12; i++) {
+
+        const heart = document.createElement("div");
+
+        heart.className = "floating-heart";
+
+        heart.innerHTML =
+            emojis[Math.floor(Math.random() * emojis.length)];
+
+        heart.style.left =
+            (event.clientX + (Math.random() - 0.5) * 150) + "px";
+
+        heart.style.top =
+            (event.clientY + (Math.random() - 0.5) * 80) + "px";
+
+        heart.style.fontSize =
+            (20 + Math.random() * 25) + "px";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 2000);
+    }
+}
+
+
+// Открытие последнего сюрприза
+function showSecret() {
+
+    const secret = document.getElementById("secret");
+
+    secret.style.display = "block";
+
+    secret.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+    });
+
+    // Дополнительные сердечки
+    for (let i = 0; i < 25; i++) {
+
+        setTimeout(() => {
+
+            const heart = document.createElement("div");
+
+            heart.className = "floating-heart";
+            heart.innerHTML = "❤️";
+
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = window.innerHeight + "px";
+            heart.style.fontSize = "25px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+
+        }, i * 80);
+    }
+}
+
+</script>
+
+</body>
+</html>
